@@ -1,0 +1,162 @@
+<div class="registration-form m-3 p-4">
+  <div class="container">
+    <form action="">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="Firstname">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Lastname">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Mobile Number</mat-label>
+              <input matInput placeholder="Mobile No">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Weight</mat-label>
+              <input matInput placeholder="Weight in KGs">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Height</mat-label>
+              <input matInput placeholder="Height in Meters">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>BMI</mat-label>
+              <input matInput placeholder="BMI">
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>BMI Result</mat-label>
+              <input matInput placeholder="BMI Result">
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label id="example-radio-group-label">Select Your Gender</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let gender of ['Male','Female']" [value]="gender">
+              {{gender}}
+            </mat-radio-button>
+          </mat-radio-group>
+          <div class="col-md-6">Selected Gender is : </div>
+        </div>
+
+        <div class="col-md-6">
+          <label id="example-radio-group-label">Do you require trainer?</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let opt of ['Yes','No']" [value]="opt">
+              {{opt}}
+            </mat-radio-button>
+          </mat-radio-group>
+          <div class="col-md-6">Selected Option is : </div>
+        </div>
+      </div>
+
+
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>
+              Select Package
+            </mat-label>
+            <mat-select>
+              <mat-option value="valid">Monthly</mat-option>
+              <mat-option value="invalid">Quarterly</mat-option>
+              <mat-option value="invalid">Yearly</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Which of the following is important to You?</mat-label>
+            <mat-select multiple>
+              <mat-option value="valid">Monthly</mat-option>
+              <mat-option value="invalid">Querterly</mat-option>
+              <mat-option value="invalid">Yearly</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Have been Gym Before?</mat-label>
+            <mat-select>
+              <mat-option value="valid">Yes</mat-option>
+              <mat-option value="invalid">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+      </div>
+      <button mat-raised-button color="accent">Submit</button>
+    </form>
+  </div>
+</div>
