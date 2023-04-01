@@ -1,21 +1,51 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-registration',
   templateUrl: './create-registration.component.html',
   styleUrls: ['./create-registration.component.scss']
 })
-export class CreateRegistrationComponent {
-  email = new FormControl('', [Validators.required, Validators.email]);
+export class CreateRegistrationComponent implements OnInit {
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
+  public packages: string[] = ['Monthly', 'Quarterly', 'Yearly'];
+  public genders: string[] = ['Male', 'Female'];
+  public importantList: string[] = [
+    "Toxic Fat Reduction",
+    "Energy and Endurance",
+    "Building Lean Muscle",
+    "Healthier Digestive System",
+    "Sugar Craving Body",
+    "Fitness"
+  ];
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+  public form!: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+
+  }
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      firstName: [''],
+      lastName: [''],
+      email: [''],
+      mobile: [''],
+      weight: [''],
+      height: [''],
+      bmi: [''],
+      bmiResult: [''],
+      gender: [''],
+      requireTrainer: [''],
+      package: [''],
+      important: [''],
+      haveGymBefore: [''],
+      enquiryDate: [''],
+    })
   }
 
-  seasons: string[] = ['Yes', 'No'];
+  onSubmit() {
+  }
+
+
+
 }
